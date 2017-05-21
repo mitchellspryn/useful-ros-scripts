@@ -115,7 +115,17 @@ echo 'running rosbag...'
 rosbag play $BAG_PATH
 
 #Kill the started ROS processes
+# Roscore starts multiple processes as well, so iterate through the child processes and end them
+# Note that if roscore was already running, then the command 'roscore &' executed earlier will fail, and these kill commands will do nothing
 echo 'killing background processes...'
+
+for CHILD_PID in `pgrep -P $IMAGE_VIEW_PID`; do
+  kill -9 ${CHILD_PID}
+done
+
+for CHILD_PID in `pgrep -P $ROSCORE_PID`; do
+  kill -9 ${CHILD_PID}
+done
 
 kill -9 $IMAGE_VIEW_PID
 kill -9 $ROSCORE_PID
