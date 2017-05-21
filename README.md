@@ -24,4 +24,4 @@ Dependencies:
 * **[rosbag](http://wiki.ros.org/rosbag)**. This is included with the ros-desktop-full package
 * **ros [imageview](http://wiki.ros.org/image_view)**. This is included with the ros-desktop-full package
 * **[mencoder](https://en.wikipedia.org/wiki/MEncoder)**. This can be installed on ubuntu with `$sudo apt-get install mencoder`
-* **bc** This is a standard linux utility. If it's not installed, you should be able to run `sudo apt-get install bc`
+* **bc** This is a standard linux utility. If it's not installed, it can be installed with `sudo apt-get install bc`
